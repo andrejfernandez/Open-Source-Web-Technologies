@@ -1,4 +1,6 @@
 {
+  "homepage": "./",
+  "name": "react-app",
   "name": "contactless-order-system",
   "version": "0.1.0",
   "private": true,
