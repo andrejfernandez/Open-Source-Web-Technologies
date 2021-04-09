@@ -1,6 +1,10 @@
 // Pages
+import Home from "./pages/Home.js";
 import Menu from "./pages/Menu.js";
-import Chekout from "./pages/Checkout.js";
+import Checkout from "./pages/Checkout.js";
+
+// Components
+import Nav from "./components/Nav.js";
 
 // Styles
 import "./styles/global.css";
@@ -12,7 +16,11 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
+      <Nav />
       <Switch location={location} key={location.pathname}>
+        <Route path="/" exact>
+          <Home />
+        </Route>
         <Route path="/Menu" exact>
           <Menu />
         </Route>
