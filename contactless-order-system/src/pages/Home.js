@@ -1,7 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 // Animation
-import { pageAnimation, titleAnim, nameAnim } from "../animation";
+import { pageAnimation, orderAnim, onTheGoAnim } from "../animation";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -14,10 +14,10 @@ const Home = () => {
     >
       <Intro>
         <div className="ContentWrapper">
-          <motion.h3 variants={titleAnim}>
-            <span>Order fast, and</span>
+          <motion.h3 variants={orderAnim}>
+            <span>Order take-out fast,</span>
           </motion.h3>
-          <motion.h1 variants={nameAnim}>OnTheGo</motion.h1>
+          <motion.h1 variants={onTheGoAnim}>OnTheGo</motion.h1>
         </div>
       </Intro>
     </StyledHome>
@@ -37,7 +37,7 @@ const Intro = styled(motion.div)`
     width: 100%;
     text-align: center;
     h3 {
-      font-size: 6em;
+      font-size: 5em;
       color: #2d6a4f;
     }
     h1 {

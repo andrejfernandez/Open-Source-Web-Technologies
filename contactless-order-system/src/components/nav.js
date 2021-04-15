@@ -8,10 +8,12 @@ const Nav = () => {
   return (
     <StyledNav>
       <div className="container">
-        <h1 className="logo">OnTheGo</h1>
+        <NavLink to="/" className="logo">
+          <h1 className="logo">OnTheGo</h1>
+        </NavLink>
         <ul>
           <li>
-            <NavLink to="/Contact" activeClassName="Active">
+            <NavLink to="/Contact" activeClassName="Active" className="button">
               <div className="content-wrapper">
                 <FontAwesomeIcon
                   className="icon"
@@ -23,10 +25,10 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Home" activeClassName="Active">
+            <NavLink to="/Home" activeClassName="Active" className="button">
               <div className="content-wrapper">
                 <FontAwesomeIcon className="icon" icon={faUtensils} size="1x" />
-                <h4>Menu</h4>
+                <h4>Menus</h4>
               </div>
             </NavLink>
           </li>
@@ -45,15 +47,19 @@ const StyledNav = styled.nav`
   padding: 0.5rem;
   background: #52b788;
   transition: 200ms ease;
-  h1 {
-    font-size: 2rem;
-    background: transparent;
-    padding-left: 2rem;
-    padding-top: 0.2rem;
-    font-family: "Satisfy", cursive;
-    color: #1b4332;
-  }
 
+  .logo {
+    background: transparent;
+    text-decoration: none;
+    h1 {
+      font-size: 2rem;
+      background: transparent;
+      padding-left: 2rem;
+      padding-top: 0.2rem;
+      font-family: "Satisfy", cursive;
+      color: #1b4332;
+    }
+  }
   .container {
     display: flex;
     background: transparent;
@@ -75,7 +81,7 @@ const StyledNav = styled.nav`
     padding-right: 1rem;
     position: relative;
   }
-  a {
+  li .button {
     background: #2d6a4f;
     border-radius: 20em;
     color: white;
