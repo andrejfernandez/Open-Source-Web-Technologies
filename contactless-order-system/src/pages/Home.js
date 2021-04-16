@@ -38,7 +38,7 @@ const Intro = styled(motion.div)`
     text-align: center;
     h3 {
       font-size: 5em;
-      color: #2d6a4f;
+      color: #1b4332;
     }
     h1 {
       background: transparent;

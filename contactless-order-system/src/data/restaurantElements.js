@@ -1,8 +1,11 @@
+import temp from "../images/temp.jpg";
+
 const restaurantElements = [
   {
-    name: "",
-    location: "",
-    restImage: "",
+    key: 1,
+    name: "Restaurant 1",
+    location: "Orlando, FL",
+    restImage: temp,
     menu: [
       {
         item: "",
@@ -14,9 +17,10 @@ const restaurantElements = [
     ],
   },
   {
-    name: "",
-    location: "",
-    restImage: "",
+    key: 2,
+    name: "Restaurant 2",
+    location: "Winter Park, FL",
+    restImage: temp,
     menu: [
       {
         item: "",
@@ -28,9 +32,10 @@ const restaurantElements = [
     ],
   },
   {
-    name: "",
-    location: "",
-    restImage: "",
+    key: 3,
+    name: "Restaurant 3",
+    location: "Winter Springs, FL",
+    restImage: temp,
     menu: [
       {
         item: "",
@@ -42,6 +47,8 @@ const restaurantElements = [
     ],
   },
 ];
+
+export default restaurantElements;
 
 // {
 //   name: "",

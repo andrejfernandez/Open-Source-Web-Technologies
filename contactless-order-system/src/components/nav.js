@@ -25,7 +25,7 @@ const Nav = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Home" activeClassName="Active" className="button">
+            <NavLink to="/Menus" activeClassName="Active" className="button">
               <div className="content-wrapper">
                 <FontAwesomeIcon className="icon" icon={faUtensils} size="1x" />
                 <h4>Menus</h4>
@@ -45,7 +45,7 @@ const StyledNav = styled.nav`
   width: 100%;
   justify-content: space-between;
   padding: 0.5rem;
-  background: #52b788;
+  background: white;
   transition: 200ms ease;
 
   .logo {
@@ -82,7 +82,7 @@ const StyledNav = styled.nav`
     position: relative;
   }
   li .button {
-    background: #2d6a4f;
+    background: #1b4332;
     border-radius: 20em;
     color: white;
     filter: greyscale(100%) opacity(0.7);
