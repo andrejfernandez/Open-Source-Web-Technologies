@@ -7,15 +7,24 @@ import RestaurantCard from "./RestaurantCard";
 // Data
 import restaurantElements from "../data/restaurantElements";
 
-const RestaurantList = ({ currentRestaurant, setCurrentRestaurant }) => {
+const RestaurantList = ({
+  restaurants,
+  setRestaurants,
+  currentRestaurant,
+  setCurrentRestaurant,
+}) => {
   return (
     <List>
       {restaurantElements.map((element) => {
         return (
           <RestaurantCard
+            restaurant={element}
+            id={element.id}
             name={element.name}
             location={element.location}
             restImage={element.restImage}
+            restaurants={restaurants}
+            setRestaurants={setRestaurants}
             currentRestaurant={currentRestaurant}
             setCurrentRestaurant={setCurrentRestaurant}
           />

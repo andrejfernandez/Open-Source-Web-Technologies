@@ -1,50 +1,68 @@
+import { v4 as uuidv4 } from "uuid";
 import temp from "../images/temp.jpg";
+
+// MenuImages
+import chickensand from "../images/food/Fried-Chicken.jpg";
 
 const restaurantElements = [
   {
-    key: 1,
+    id: uuidv4(),
+    active: true,
     name: "Restaurant 1",
     location: "Orlando, FL",
     restImage: temp,
     menu: [
       {
-        item: "",
-        desc: "",
-        ingred: ["", ""],
-        price: "",
-        itemImage: "",
+        item: "Chicken Sandwhich",
+        ingred: ["Potato Bun", "Spicy Mayo", "Fried Chicken", "Pickles"],
+        price: 13.99,
+        itemImage: chickensand,
+      },
+      {
+        item: "Chicken Sandwhich",
+        ingred: ["Potato Bun", "Spicy Mayo", "Fried Chicken", "Pickles"],
+        price: 13.99,
+        itemImage: chickensand,
+      },
+      {
+        item: "Chicken Sandwhich",
+        ingred: ["Potato Bun", "Spicy Mayo", "Fried Chicken", "Pickles"],
+        price: 13.99,
+        itemImage: chickensand,
       },
     ],
   },
   {
-    key: 2,
+    id: uuidv4(),
+    active: false,
     name: "Restaurant 2",
     location: "Winter Park, FL",
     restImage: temp,
-    menu: [
-      {
-        item: "",
-        desc: "",
-        ingred: ["", ""],
-        price: "",
-        itemImage: "",
-      },
-    ],
+    // menu: [
+    //   {
+    //     item: "",
+    //     desc: "",
+    //     ingred: ["", ""],
+    //     price: "",
+    //     itemImage: "",
+    //   },
+    // ],
   },
   {
-    key: 3,
+    id: uuidv4(),
+    active: false,
     name: "Restaurant 3",
     location: "Winter Springs, FL",
     restImage: temp,
-    menu: [
-      {
-        item: "",
-        desc: "",
-        ingred: ["", ""],
-        price: "",
-        itemImage: "",
-      },
-    ],
+    // menu: [
+    //   {
+    //     item: "",
+    //     desc: "",
+    //     ingred: ["", ""],
+    //     price: "",
+    //     itemImage: "",
+    //   },
+    // ],
   },
 ];
 

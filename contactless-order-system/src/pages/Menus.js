@@ -1,5 +1,6 @@
 // Components
 import RestaurantList from "../components/RestaurantList";
+import Menu from "../components/Menu";
 
 // Style
 import styled from "styled-components";
@@ -10,17 +11,23 @@ import restaurantElements from "../data/restaurantElements";
 // Hooks
 import { useState, useRef } from "react";
 
-const Menus = () => {
+const Menus = ({
+  restaurants,
+  setRestaurants,
+  currentRestaurant,
+  setCurrentRestaurant,
+}) => {
   // State
-  const [currentRestaurant, setCurrentRestaurant] = useState(
-    restaurantElements[0]
-  );
   return (
     <StyledMenus>
       <RestaurantList
+        restaurants={restaurants}
+        setRestaurants={setRestaurants}
         currentRestaurant={currentRestaurant}
         setCurrentRestaurant={setCurrentRestaurant}
       />
+
+      <Menu currentRestaurant={currentRestaurant} />
     </StyledMenus>
   );
 };

@@ -5,20 +5,39 @@ import styled from "styled-components";
 import restaurantElements from "../data/restaurantElements";
 
 const RestaurantCard = ({
+  restaurant,
+  id,
   name,
   location,
   restImage,
+  restaurants,
+  setRestaurants,
   currentRestaurant,
   setCurrentRestaurant,
 }) => {
-  // Event Handler
-  const currentRestaurantHandler = () => {
-    setCurrentRestaurant = restaurantElements[2];
-    console.log(currentRestaurant);
+  // Handler
+  const currentRestaurantHandler = async () => {
+    await setCurrentRestaurant(restaurant);
+    // Add active state
+    const newRestaurants = restaurants.map((element) => {
+      if (element.id === id) {
+        return {
+          ...restaurant,
+          active: true,
+        };
+      } else {
+        return {
+          ...restaurant,
+          active: false,
+        };
+      }
+    });
+    setRestaurants(newRestaurants);
+    // console.log(currentRestaurant);
   };
 
   return (
-    <StyledCard onClick={() => currentRestaurantHandler()}>
+    <StyledCard onClick={currentRestaurantHandler}>
       <img src={restImage} alt="" />
       <div className="name-loc">
         <h2>{name}</h2>
