@@ -14,19 +14,26 @@ const restaurantElements = [
     menu: [
       {
         item: "Chicken Sandwhich",
-        ingred: ["Potato Bun", "Spicy Mayo", "Fried Chicken", "Pickles"],
+        ingred: ["Potato Bun, ", "Spicy Mayo, ", "Fried Chicken, ", "Pickles"],
         price: 13.99,
         itemImage: chickensand,
       },
       {
         item: "Chicken Sandwhich",
-        ingred: ["Potato Bun", "Spicy Mayo", "Fried Chicken", "Pickles"],
+        ingred: ["Potato Bun, ", "Spicy Mayo, ", "Fried Chicken, ", "Pickles"],
         price: 13.99,
         itemImage: chickensand,
       },
       {
         item: "Chicken Sandwhich",
-        ingred: ["Potato Bun", "Spicy Mayo", "Fried Chicken", "Pickles"],
+        ingred: ["Potato Bun, ", "Spicy Mayo, ", "Fried Chicken, ", "Pickles"],
+        price: 13.99,
+        itemImage: chickensand,
+      },
+
+      {
+        item: "Chicken Sandwhich",
+        ingred: ["Potato Bun, ", "Spicy Mayo, ", "Fried Chicken, ", "Pickles"],
         price: 13.99,
         itemImage: chickensand,
       },

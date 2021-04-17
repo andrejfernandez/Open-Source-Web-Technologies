@@ -17,7 +17,8 @@ const Menu = ({ currentRestaurant }) => {
 const List = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-basis: 50%;
+  justify-content: space-around;
   padding: 0.5rem;
 `;
 export default Menu;

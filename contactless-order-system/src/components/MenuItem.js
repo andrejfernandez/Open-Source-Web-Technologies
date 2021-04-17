@@ -6,11 +6,12 @@ const MenuItem = ({ item }) => {
     <StyledItem>
       <img src={item.itemImage} alt="" />
       <div className="container">
-        {" "}
         <div className="desc">
-          <h2>{item.item}</h2>
+          <div className="name-price">
+            <h2>{item.item}</h2>
+            <h3>${item.price}</h3>
+          </div>
           <span>{item.ingred}</span>
-          <h3>{item.price}</h3>
         </div>
         <button>Add to Cart</button>
       </div>
@@ -20,7 +21,7 @@ const MenuItem = ({ item }) => {
 
 const StyledItem = styled.div`
   height: 10rem;
-  width: 40rem;
+  width: 35rem;
   overflow: hidden;
   background: white;
   color: black;
@@ -47,13 +48,20 @@ const StyledItem = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      h3 {
-        margin-top: 1rem;
+
+      .name-price {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        h3 {
+          font-size: 1.5rem;
+          margin-right: 2rem;
+        }
       }
     }
 
     button {
-      width: 20%;
+      width: 30%;
       margin-left: auto;
       margin-right: auto;
       background: #1b4332;

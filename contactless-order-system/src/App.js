@@ -44,7 +44,7 @@ function App() {
           <Checkout />
         </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
