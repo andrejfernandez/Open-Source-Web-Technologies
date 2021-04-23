@@ -59,7 +59,7 @@ const StyledCard = styled.div`
   border-radius: 1em;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
     height: 70%;
     width: 100%;
     border: none;

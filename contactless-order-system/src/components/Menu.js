@@ -15,10 +15,11 @@ const Menu = ({ currentRestaurant }) => {
 };
 
 const List = styled.div`
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 50%;
-  justify-content: space-around;
-  padding: 0.5rem;
+  justify-content: center;
+  padding: 2rem;
+  margin: auto;
 `;
 export default Menu;
