@@ -16,6 +16,10 @@ const Menus = ({
   setRestaurants,
   currentRestaurant,
   setCurrentRestaurant,
+  cart,
+  setCart,
+  total,
+  setTotal,
 }) => {
   // State
   return (
@@ -27,7 +31,13 @@ const Menus = ({
         setCurrentRestaurant={setCurrentRestaurant}
       />
 
-      <Menu currentRestaurant={currentRestaurant} />
+      <Menu
+        currentRestaurant={currentRestaurant}
+        cart={cart}
+        setCart={setCart}
+        total={total}
+        setTotal={setTotal}
+      />
     </StyledMenus>
   );
 };

@@ -1,7 +1,15 @@
 // Style
 import styled from "styled-components";
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, cart, setCart, total, setTotal }) => {
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+    console.log(cart);
+    const num = total + item.price;
+    const result = Math.round(num * 100) / 100;
+    setTotal(result);
+  };
+
   return (
     <StyledItem>
       <div className="top-container">
@@ -17,7 +25,7 @@ const MenuItem = ({ item }) => {
         </div>
       </div>
       <div className="bottom-container">
-        <button>Add to Cart</button>
+        <button onClick={() => addToCart(item)}>Add to Cart</button>
       </div>
     </StyledItem>
   );
@@ -101,6 +109,9 @@ const StyledItem = styled.div`
       text-decoration: none;
       padding: 0.8rem;
       margin-bottom: 0.5rem;
+      :hover {
+        cursor: pointer;
+      }
     }
   }
 

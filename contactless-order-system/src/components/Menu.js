@@ -4,11 +4,19 @@ import styled from "styled-components";
 // Components
 import MenuItem from "./MenuItem";
 
-const Menu = ({ currentRestaurant }) => {
+const Menu = ({ currentRestaurant, cart, setCart, total, setTotal }) => {
   return (
     <List>
       {currentRestaurant.menu.map((item) => {
-        return <MenuItem item={item} />;
+        return (
+          <MenuItem
+            item={item}
+            cart={cart}
+            setCart={setCart}
+            total={total}
+            setTotal={setTotal}
+          />
+        );
       })}
     </List>
   );

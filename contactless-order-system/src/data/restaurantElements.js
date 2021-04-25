@@ -19,12 +19,14 @@ const restaurantElements = [
     restImage: r1logo,
     menu: [
       {
+        id: uuidv4(),
         item: "Chicken Sandwhich",
         ingred: ["White Bun, ", "Fried Chicken, ", "Pickles"],
         price: 5.99,
         itemImage: r1item1,
       },
       {
+        id: uuidv4(),
         item: "Deluxe Chicken Sandwhich",
         ingred: [
           "White Bun, ",
@@ -37,6 +39,7 @@ const restaurantElements = [
         itemImage: r1item2,
       },
       {
+        id: uuidv4(),
         item: "Grilled Chicken Sandwhich",
         ingred: [
           "Brioche Bun, ",
@@ -49,6 +52,7 @@ const restaurantElements = [
         itemImage: r1item3,
       },
       {
+        id: uuidv4(),
         item: "Deluxe Grilled Chicken Sandwhich",
         ingred: [
           "Brioche Bun, ",
@@ -63,12 +67,14 @@ const restaurantElements = [
         itemImage: r1item4,
       },
       {
+        id: uuidv4(),
         item: "Nuggets",
         ingred: ["Boneless Chicken Breast"],
         price: 4.99,
         itemImage: r1item5,
       },
       {
+        id: uuidv4(),
         item: "Waffle Potato Fries",
         ingred: ["Seas Salt, Cooked in Canola Oil"],
         price: 3.99,

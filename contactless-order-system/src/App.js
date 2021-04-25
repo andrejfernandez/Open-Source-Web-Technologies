@@ -24,10 +24,12 @@ function App() {
   // State
   const [restaurants, setRestaurants] = useState(data);
   const [currentRestaurant, setCurrentRestaurant] = useState(restaurants[0]);
+  const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
   return (
     <div className="App">
-      <Nav />
+      <Nav cart={cart} />
       <Switch location={location} key={location.pathname}>
         <Route path="/" exact>
           <Home />
@@ -38,10 +40,19 @@ function App() {
             setRestaurants={setRestaurants}
             currentRestaurant={currentRestaurant}
             setCurrentRestaurant={setCurrentRestaurant}
+            cart={cart}
+            setCart={setCart}
+            total={total}
+            setTotal={setTotal}
           />
         </Route>
         <Route path="/Checkout" exact>
-          <Checkout />
+          <Checkout
+            cart={cart}
+            setCart={setCart}
+            total={total}
+            setTotal={setTotal}
+          />
         </Route>
       </Switch>
       {/* <Footer /> */}
