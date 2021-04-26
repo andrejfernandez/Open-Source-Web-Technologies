@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ({ cart }) => {
+const Nav = ({ cart, cartStatus, setCartStatus }) => {
   return (
     <StyledNav>
       <div className="container">
@@ -13,7 +13,7 @@ const Nav = ({ cart }) => {
         </NavLink>
         <ul>
           <li>
-            <NavLink to="/Checkout" activeClassName="Active" className="button">
+            <NavLink to="/CartView" activeClassName="Active" className="button">
               <div className="content-wrapper">
                 <FontAwesomeIcon
                   className="icon"

@@ -1,6 +1,7 @@
 // Pages
 import Home from "./pages/Home.js";
 import Menu from "./pages/Menus.js";
+import CartView from "./pages/CartView.js";
 import Checkout from "./pages/Checkout.js";
 
 // Data
@@ -46,13 +47,16 @@ function App() {
             setTotal={setTotal}
           />
         </Route>
-        <Route path="/Checkout" exact>
-          <Checkout
+        <Route path="/CartView" exact>
+          <CartView
             cart={cart}
             setCart={setCart}
             total={total}
             setTotal={setTotal}
           />
+        </Route>
+        <Route path="/Checkout" exact>
+          <Checkout />
         </Route>
       </Switch>
       {/* <Footer /> */}

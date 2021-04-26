@@ -31,6 +31,23 @@ export const onTheGoAnim = {
   },
 };
 
+export const checkOutAnim = {
+  hidden: { opacity: 0, x: 1000 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 0.5,
+      ease: "easeOut",
+      duration: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    x: 1000,
+  },
+};
+
 export const orderAnim = {
   hidden: { scale: 1.5, opacity: 0 },
   show: {

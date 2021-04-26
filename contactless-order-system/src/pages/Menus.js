@@ -1,6 +1,7 @@
 // Components
 import RestaurantList from "../components/RestaurantList";
 import Menu from "../components/Menu";
+import CartView from "./CartView.js";
 
 // Style
 import styled from "styled-components";
@@ -10,6 +11,10 @@ import restaurantElements from "../data/restaurantElements";
 
 // Hooks
 import { useState, useRef } from "react";
+
+// Animation
+import { checkOutAnim, pageAnimation } from "../animation";
+import { motion } from "framer-motion";
 
 const Menus = ({
   restaurants,
@@ -23,7 +28,12 @@ const Menus = ({
 }) => {
   // State
   return (
-    <StyledMenus>
+    <StyledMenus
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <RestaurantList
         restaurants={restaurants}
         setRestaurants={setRestaurants}
@@ -38,10 +48,16 @@ const Menus = ({
         total={total}
         setTotal={setTotal}
       />
+      <CartView
+        cart={cart}
+        setCart={setCart}
+        total={total}
+        setTotal={setTotal}
+      />
     </StyledMenus>
   );
 };
 
-const StyledMenus = styled.div``;
+const StyledMenus = styled(motion.div)``;
 
 export default Menus;
