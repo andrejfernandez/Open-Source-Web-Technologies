@@ -48,12 +48,6 @@ const Menus = ({
         total={total}
         setTotal={setTotal}
       />
-      <CartView
-        cart={cart}
-        setCart={setCart}
-        total={total}
-        setTotal={setTotal}
-      />
     </StyledMenus>
   );
 };
