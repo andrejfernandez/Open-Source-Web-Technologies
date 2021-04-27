@@ -7,6 +7,7 @@ const MenuItem = ({ item, cart, setCart, total, setTotal }) => {
     console.log(cart);
     const num = total + item.price;
     const result = Math.round(num * 100) / 100;
+    console.log("R = " + result);
     setTotal(result);
   };
 
