@@ -26,7 +26,9 @@ const MenuItem = ({ item, cart, setCart, total, setTotal }) => {
         </div>
       </div>
       <div className="bottom-container">
-        <button onClick={() => addToCart(item)}>Add to Cart</button>
+        <button onClick={() => addToCart(item)}>
+          <h2> Add to Cart</h2>
+        </button>
       </div>
     </StyledItem>
   );
@@ -35,7 +37,7 @@ const MenuItem = ({ item, cart, setCart, total, setTotal }) => {
 const StyledItem = styled.div`
   border-radius: 1em;
   border-style: solid;
-  border-width: 0.1rem;
+  border-width: 0.15rem;
   border-color: #1b4332;
   margin: 0rem 1rem 2rem 1rem;
   padding: 0rem 0rem 2rem 0rem;
@@ -95,7 +97,7 @@ const StyledItem = styled.div`
     position: relative;
     margin-top: 2rem;
     button {
-      width: 20%;
+      width: 30%;
       margin: 0;
       position: absolute;
       top: 50%;
@@ -110,6 +112,9 @@ const StyledItem = styled.div`
       text-decoration: none;
       padding: 0.8rem;
       margin-bottom: 0.5rem;
+      :active {
+        background: #2d6a4f;
+      }
       :hover {
         cursor: pointer;
       }

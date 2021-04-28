@@ -47,6 +47,8 @@ const StyledNav = styled.nav`
   padding: 0.5rem;
   background: white;
   transition: 200ms ease;
+  border-bottom: 0.12rem solid #081c15;
+  box-shadow: 0rem 0.2rem rgba(27, 67, 50, 0.1);
 
   .logo {
     background: transparent;
@@ -89,6 +91,9 @@ const StyledNav = styled.nav`
     text-decoration: none;
     display: flex;
     padding: 16px 16px;
+    :active {
+      background: #2d6a4f;
+    }
   }
   .content-wrapper {
     background: transparent;

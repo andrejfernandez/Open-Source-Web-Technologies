@@ -14,7 +14,14 @@ import CheckoutForm from "../components/CheckoutForm.js";
 import { checkOutAnim, pageAnimation } from "../animation";
 import { motion } from "framer-motion";
 
-const CartView = ({ cart, setCart, total, setTotal }) => {
+const CartView = ({
+  cart,
+  setCart,
+  total,
+  setTotal,
+  currentRestaurant,
+  setCurrentRestaurant,
+}) => {
   if (cart.length == 0) {
     return <h1>Nothing in your cart!</h1>;
   } else {
@@ -27,6 +34,14 @@ const CartView = ({ cart, setCart, total, setTotal }) => {
         exit="exit"
       >
         <StyledCart>
+          <div className="title1">
+            <img src={currentRestaurant.restImage} alt="" />
+            <div className="name-loc">
+              <h2>{currentRestaurant.name}</h2>
+              <h4>{currentRestaurant.location}</h4>
+            </div>
+          </div>
+
           {cart.map((item) => {
             return (
               <CheckoutItem
@@ -47,6 +62,7 @@ const CartView = ({ cart, setCart, total, setTotal }) => {
             <h2> {Math.round((total + total * 0.06) * 100) / 100}</h2>
           </Total>
         </StyledCart>
+        {/* <Line></Line> */}
         <StyledForm>
           <CheckoutForm />
         </StyledForm>
@@ -57,9 +73,9 @@ const CartView = ({ cart, setCart, total, setTotal }) => {
 
 const Container = styled(motion.div)`
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 2rem 0rem 2rem;
-  padding: 2rem;
+  justify-content: space-around;
+  margin: 1rem 3rem 1rem 3rem;
+  padding: 0rem;
 `;
 
 const Total = styled.div`
@@ -74,7 +90,36 @@ const Total = styled.div`
 `;
 
 const StyledCart = styled.div`
-  width: 100%;
+  .title1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 1rem;
+    h1 {
+      margin-top: auto;
+      //margin-bottom: auto;
+      padding-right: 1rem;
+      padding-bottom: 0.5rem;
+      font-size: 3rem;
+      text-align: center;
+    }
+    img {
+      margin: auto;
+      object-fit: cover;
+      height: 7rem;
+      width: 17rem;
+      border: none;
+    }
+    .name-loc {
+      text-align: center;
+    }
+    width: 80%;
+    margin: auto;
+    margin-bottom: 0.2rem;
+  }
+
+  width: 50%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -85,7 +130,7 @@ const StyledCart = styled.div`
 `;
 
 const StyledForm = styled.form`
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -94,4 +139,9 @@ const StyledForm = styled.form`
   margin: auto;
 `;
 
+// const Line = styled.div`
+//   height: 100%;
+//   width: 10%;
+//   background: black;
+// `;
 export default CartView;

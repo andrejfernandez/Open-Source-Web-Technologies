@@ -15,7 +15,7 @@ const Home = () => {
       <Intro>
         <div className="ContentWrapper">
           <motion.h3 variants={orderAnim}>
-            <span>Order take-out fast,</span>
+            <span>Takeout while you're</span>
           </motion.h3>
           <motion.h1 variants={onTheGoAnim}>OnTheGo</motion.h1>
         </div>
