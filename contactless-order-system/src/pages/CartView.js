@@ -23,7 +23,12 @@ const CartView = ({
   setCurrentRestaurant,
 }) => {
   if (cart.length == 0) {
-    return <h1>Nothing in your cart!</h1>;
+    return (
+      <Error>
+        <h1>Oh no!</h1>
+        <h2>Nothing in your cart!</h2>
+      </Error>
+    );
   } else {
     return (
       <Container
@@ -37,8 +42,7 @@ const CartView = ({
           <div className="title1">
             <img src={currentRestaurant.restImage} alt="" />
             <div className="name-loc">
-              <h2>{currentRestaurant.name}</h2>
-              <h4>{currentRestaurant.location}</h4>
+              <h2>{currentRestaurant.location}</h2>
             </div>
           </div>
 
@@ -64,17 +68,28 @@ const CartView = ({
         </StyledCart>
         {/* <Line></Line> */}
         <StyledForm>
-          <CheckoutForm />
+          <CheckoutForm
+            total={total}
+            cart={cart}
+            currentRestaurant={currentRestaurant}
+          />
         </StyledForm>
       </Container>
     );
   }
 };
 
+const Error = styled.div`
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 5rem;
+  color: #1b4332;
+`;
+
 const Container = styled(motion.div)`
   display: flex;
   justify-content: space-around;
-  margin: 1rem 3rem 1rem 3rem;
+  margin: 5rem 3rem 1rem 3rem;
   padding: 0rem;
 `;
 
@@ -106,12 +121,13 @@ const StyledCart = styled.div`
     }
     img {
       margin: auto;
-      object-fit: cover;
-      height: 7rem;
+      object-fit: scale-down;
+      height: 8rem;
       width: 17rem;
       border: none;
     }
     .name-loc {
+      margin-top: 1rem;
       text-align: center;
     }
     width: 80%;
@@ -129,7 +145,7 @@ const StyledCart = styled.div`
   margin-bottom: auto;
 `;
 
-const StyledForm = styled.form`
+const StyledForm = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;

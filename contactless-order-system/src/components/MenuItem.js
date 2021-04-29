@@ -38,15 +38,19 @@ const StyledItem = styled.div`
   border-radius: 1em;
   border-style: solid;
   border-width: 0.15rem;
-  border-color: #1b4332;
+  border-color: #bdbdbd;
   margin: 0rem 1rem 2rem 1rem;
   padding: 0rem 0rem 2rem 0rem;
 
+  :hover {
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.01);
+    box-shadow: 0.2rem 0.2rem rgba(92, 92, 92, 0.1);
+  }
   .top-container {
     height: 8rem;
     width: 35rem;
     overflow: hidden;
-    background: white;
     color: black;
     margin: 1rem 1rem 1rem 1rem;
     text-align: center;
@@ -61,6 +65,7 @@ const StyledItem = styled.div`
       height: 100%;
       width: 30%;
       border: none;
+      border-radius: 1rem;
     }
 
     .container {
@@ -97,6 +102,10 @@ const StyledItem = styled.div`
     position: relative;
     margin-top: 2rem;
     button {
+      :hover {
+        cursor: pointer;
+      }
+
       width: 30%;
       margin: 0;
       position: absolute;
@@ -115,15 +124,7 @@ const StyledItem = styled.div`
       :active {
         background: #2d6a4f;
       }
-      :hover {
-        cursor: pointer;
-      }
     }
-  }
-
-  :hover {
-    transition: all 0.1s ease-in-out;
-    transform: scale(1.01);
   }
 `;
 
