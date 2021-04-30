@@ -11,7 +11,7 @@ import CheckoutItem from "../components/CheckoutItem.js";
 import CheckoutForm from "../components/CheckoutForm.js";
 
 // Animation
-import { checkOutAnim, pageAnimation } from "../animation";
+import { fadeAnim } from "../animation";
 import { motion } from "framer-motion";
 
 const CartView = ({
@@ -21,6 +21,8 @@ const CartView = ({
   setTotal,
   currentRestaurant,
   setCurrentRestaurant,
+  customer,
+  setCustomer,
 }) => {
   if (cart.length == 0) {
     return (
@@ -31,50 +33,61 @@ const CartView = ({
     );
   } else {
     return (
-      <Container
-        className="container"
-        variants={checkOutAnim}
-        initial="hidden"
-        animate="show"
-        exit="exit"
-      >
-        <StyledCart>
-          <div className="title1">
-            <img src={currentRestaurant.restImage} alt="" />
-            <div className="name-loc">
-              <h2>{currentRestaurant.location}</h2>
+      <div className="page">
+        <Title>
+          <h2> Review, Edit, and Pay</h2>
+        </Title>
+        <Container className="container">
+          <StyledCart
+            variants={fadeAnim}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+          >
+            <div className="title1">
+              <img src={currentRestaurant.restImage} alt="" />
+              <div className="name-loc">
+                <h2>{currentRestaurant.location}</h2>
+              </div>
             </div>
-          </div>
 
-          {cart.map((item) => {
-            return (
-              <CheckoutItem
-                item={item}
+            {cart.map((item) => {
+              return (
+                <CheckoutItem
+                  item={item}
+                  cart={cart}
+                  setCart={setCart}
+                  total={total}
+                  setTotal={setTotal}
+                />
+              );
+            })}
+            <Total>
+              <span>Subtotal </span>
+              <h2>{total}</h2>
+            </Total>
+            <Total>
+              <span>Total </span>
+              <h2 className="bottomTotal">
+                {Math.round((total + total * 0.06) * 100) / 100}
+              </h2>
+            </Total>
+          </StyledCart>
+          {/* <Line></Line> */}
+          <StyledForm>
+            <div className="container2">
+              <CheckoutForm
+                total={total}
                 cart={cart}
                 setCart={setCart}
-                total={total}
-                setTotal={setTotal}
+                currentRestaurant={currentRestaurant}
+                customer={customer}
+                setCustomer={setCustomer}
               />
-            );
-          })}
-          <Total>
-            <span>Subtotal </span>
-            <h2>{total}</h2>
-          </Total>
-          <Total>
-            <span>Total </span>
-            <h2> {Math.round((total + total * 0.06) * 100) / 100}</h2>
-          </Total>
-        </StyledCart>
-        {/* <Line></Line> */}
-        <StyledForm>
-          <CheckoutForm
-            total={total}
-            cart={cart}
-            currentRestaurant={currentRestaurant}
-          />
-        </StyledForm>
-      </Container>
+            </div>
+          </StyledForm>
+        </Container>
+      </div>
     );
   }
 };
@@ -102,9 +115,23 @@ const Total = styled.div`
     margin-right: 1rem;
     margin-left: auto;
   }
+  .bottomTotal {
+    margin-bottom: 2rem;
+  }
 `;
 
-const StyledCart = styled.div`
+const StyledCart = styled(motion.div)`
+  width: 50%;
+  border-radius: 1em;
+  border-style: solid;
+  border-width: 0.15rem;
+  border-color: #bdbdbd;
+  :hover {
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.01);
+    box-shadow: 0.3rem 0.3rem rgba(92, 92, 92, 0.1);
+  }
+
   .title1 {
     display: flex;
     flex-direction: column;
@@ -121,6 +148,7 @@ const StyledCart = styled.div`
     }
     img {
       margin: auto;
+      margin-top: 2rem;
       object-fit: scale-down;
       height: 8rem;
       width: 17rem;
@@ -153,6 +181,17 @@ const StyledForm = styled.div`
   justify-content: space-evenly;
   margin: 2rem;
   margin: auto;
+`;
+
+const Title = styled.div`
+  margin: 0rem 0rem 0rem 0rem;
+  background-color: #1b4332;
+  h2 {
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+  }
 `;
 
 // const Line = styled.div`

@@ -40,6 +40,10 @@ const List = styled.div`
   justify-content: center;
   padding: 0.5rem;
   background: #1b4332;
+
+  .Active {
+    color: red;
+  }
 `;
 
 export default RestaurantList;

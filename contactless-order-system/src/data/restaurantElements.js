@@ -19,6 +19,15 @@ import r2item4 from "../images/Restaurant2/item4.webp";
 import r2item5 from "../images/Restaurant2/item5.webp";
 import r2item6 from "../images/Restaurant2/item6.webp";
 
+// Restaurant 3
+import r3logo from "../images/Restaurant3/logo.png";
+import r3item1 from "../images/Restaurant3/item1.jpg";
+import r3item2 from "../images/Restaurant3/item2.jpg";
+import r3item3 from "../images/Restaurant3/item3.jpg";
+import r3item4 from "../images/Restaurant3/item4.jpg";
+import r3item5 from "../images/Restaurant3/item5.jpg";
+import r3item6 from "../images/Restaurant3/item6.jpg";
+
 const restaurantElements = [
   {
     id: uuidv4(),
@@ -167,6 +176,66 @@ const restaurantElements = [
         ],
         price: 15.49,
         itemImage: r2item6,
+      },
+    ],
+  },
+  ///////////////////////////////////////////////////////////////////////
+  {
+    id: uuidv4(),
+    active: true,
+    name: "Bento Asian Kitchen",
+    location: "Oviedo, FL",
+    restImage: r3logo,
+    menu: [
+      {
+        id: uuidv4(),
+        item: "Mongolian Noodle Bowl",
+        ingred: [
+          "Red Bell Peppers, Onions, Scallions, Mushrooms, Sweet Hoisin Sauce",
+        ],
+        price: 12.49,
+        itemImage: r3item1,
+      },
+      {
+        id: uuidv4(),
+        item: "Veggie Stir Fry Noodle Bowl",
+        ingred: [
+          "Broccoli, Carrots, String Beans, Red Bell Pepper, Mushroom, Zucchini, Soy Garlic Sauce",
+        ],
+        price: 12.99,
+        itemImage: r3item2,
+      },
+      {
+        id: uuidv4(),
+        item: "Korean Noodle Bowl",
+        ingred: [
+          "Red Bell Peppers, Onions, Scallions, Mushrooms, Gochujang Sauce",
+        ],
+        price: 11.99,
+        itemImage: r3item3,
+      },
+      {
+        id: uuidv4(),
+        item: "Garlic Broccoli Rice Bowl",
+        ingred: ["Broccoli, Carrots, Soy Garlic sauce"],
+        price: 10.99,
+        itemImage: r3item4,
+      },
+      {
+        id: uuidv4(),
+        item: "Red Coconut Curry Rice Bowl",
+        ingred: ["Red Bell Peppers, String Beans, Carrots, Zucchini"],
+        price: 1,
+        itemImage: r3item5,
+      },
+      {
+        id: uuidv4(),
+        item: "Korean Rice Bowl",
+        ingred: [
+          "Red Bell Peppers, Onions, Scallions, Mushrooms, Gochujang Sauce",
+        ],
+        price: 11.49,
+        itemImage: r3item6,
       },
     ],
   },

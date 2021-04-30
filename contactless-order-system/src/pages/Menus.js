@@ -12,10 +12,6 @@ import restaurantElements from "../data/restaurantElements";
 // Hooks
 import { useState, useRef } from "react";
 
-// Animation
-import { checkOutAnim, pageAnimation } from "../animation";
-import { motion } from "framer-motion";
-
 const Menus = ({
   restaurants,
   setRestaurants,
@@ -28,12 +24,7 @@ const Menus = ({
 }) => {
   // State
   return (
-    <StyledMenus
-      variants={pageAnimation}
-      initial="hidden"
-      animate="show"
-      exit="exit"
-    >
+    <StyledMenus>
       <RestaurantList
         restaurants={restaurants}
         setRestaurants={setRestaurants}
@@ -52,6 +43,6 @@ const Menus = ({
   );
 };
 
-const StyledMenus = styled(motion.div)``;
+const StyledMenus = styled.div``;
 
 export default Menus;

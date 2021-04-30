@@ -4,10 +4,13 @@ import styled from "styled-components";
 // Components
 import MenuItem from "./MenuItem";
 
+// Animation
+import { menuAnim } from "../animation";
+import { motion } from "framer-motion";
+
 const Menu = ({ currentRestaurant, cart, setCart, total, setTotal }) => {
   return (
-    <List>
-      {/* <div className="container"> */}
+    <List variants={menuAnim} initial="hidden" animate="show" exit="exit">
       {currentRestaurant.menu.map((item) => {
         return (
           <MenuItem
@@ -19,13 +22,12 @@ const Menu = ({ currentRestaurant, cart, setCart, total, setTotal }) => {
           />
         );
       })}
-      {/* </div> */}
     </List>
   );
 };
 
-const List = styled.div`
-  width: 80%;
+const List = styled(motion.div)`
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -4,6 +4,10 @@ import styled from "styled-components";
 // Data
 import restaurantElements from "../data/restaurantElements";
 
+// Animation
+import { restListAnim } from "../animation";
+import { motion } from "framer-motion";
+
 const RestaurantCard = ({
   restaurant,
   id,
@@ -37,16 +41,31 @@ const RestaurantCard = ({
   };
 
   return (
-    <StyledCard onClick={currentRestaurantHandler}>
-      <img src={restImage} alt="" />
-      <div className="name-loc">
-        <h2>{location}</h2>
-      </div>
-    </StyledCard>
+    <Container>
+      <StyledCard
+        onClick={currentRestaurantHandler}
+        variants={restListAnim}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+        activeClassName="Active"
+      >
+        <img src={restImage} alt="" />
+        <div className="name-loc">
+          <h2>{location}</h2>
+        </div>
+      </StyledCard>
+    </Container>
   );
 };
 
-const StyledCard = styled.div`
+const Container = styled.div`
+  .Active {
+    background-color: red;
+  }
+`;
+
+const StyledCard = styled(motion.div)`
   height: 10rem;
   width: 18rem;
   overflow: hidden;
@@ -80,6 +99,7 @@ const StyledCard = styled.div`
   :hover {
     transition: all 0.1s ease-in-out;
     transform: scale(1.03);
+    cursor: pointer;
   }
 `;
 

@@ -4,7 +4,35 @@ import emailjs from "emailjs-com";
 // Style
 import styled from "styled-components";
 
-const CheckoutForm = ({ total, cart, currentRestaurant }) => {
+// Animation
+import { fadeAnim } from "../animation";
+import { motion } from "framer-motion";
+
+import { useHistory } from "react-router-dom";
+
+const CheckoutForm = ({
+  total,
+  cart,
+  setCart,
+  currentRestaurant,
+  customer,
+  setCustomer,
+}) => {
+  let history = useHistory();
+
+  const redirect = () => {
+    history.push("/Order-Successful");
+  };
+
+  const newCustomer = (e) => {
+    const result = {
+      name: e.target[0].value,
+      email: e.target[2].value,
+    };
+    console.log(result);
+    setCustomer(result);
+  };
+
   function sendEmail(e) {
     e.preventDefault();
     console.log(e);
@@ -18,12 +46,14 @@ const CheckoutForm = ({ total, cart, currentRestaurant }) => {
       .then(
         (result) => {
           console.log(result.text);
+          redirect();
+          newCustomer(e);
+          setCart([]);
         },
         (error) => {
           console.log(error.text);
         }
       );
-    e.target.reset();
   }
 
   function prettyCart(cart) {
@@ -36,7 +66,7 @@ const CheckoutForm = ({ total, cart, currentRestaurant }) => {
   }
 
   return (
-    <Form>
+    <Form variants={fadeAnim} initial="hidden" animate="show" exit="exit">
       <form classNme="Customer Info" onSubmit={sendEmail}>
         <h1>Customer Information</h1>
         <div className="name">
@@ -135,7 +165,7 @@ const CheckoutForm = ({ total, cart, currentRestaurant }) => {
   );
 };
 
-const Form = styled.div`
+const Form = styled(motion.div)`
   //  background-color: #d8f3dc;
   width: 80%;
   margin: auto;
@@ -169,7 +199,11 @@ const Form = styled.div`
     margin-bottom: 2rem;
     margin: 0.8rem;
     text-align: center;
+    /* :hover {
+      background-color: #d8f3dc;
+    } */
     :focus {
+      background-color: #d8f3dc;
     }
   }
 

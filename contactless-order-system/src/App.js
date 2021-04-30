@@ -2,6 +2,7 @@
 import Home from "./pages/Home.js";
 import Menu from "./pages/Menus.js";
 import CartView from "./pages/CartView.js";
+import Ordered from "./pages/Ordered.js";
 
 // Data
 import data from "./data/restaurantElements";
@@ -26,6 +27,7 @@ function App() {
   const [currentRestaurant, setCurrentRestaurant] = useState(restaurants[0]);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const [customer, setCustomer] = useState([]);
 
   return (
     <div className="App">
@@ -54,7 +56,12 @@ function App() {
             setTotal={setTotal}
             currentRestaurant={currentRestaurant}
             setCurrentRestaurant={setCurrentRestaurant}
+            customer={customer}
+            setCustomer={setCustomer}
           />
+        </Route>
+        <Route path="/Order-Successful" exact>
+          <Ordered customer={customer} />
         </Route>
       </Switch>
       {/* <Footer /> */}

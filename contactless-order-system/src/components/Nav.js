@@ -40,6 +40,7 @@ const Nav = ({ cart, cartStatus, setCartStatus }) => {
 
 // Styling
 const StyledNav = styled.nav`
+  z-index: 2100;
   min-height: 5vh;
   //display: flex;
   width: 100%;
